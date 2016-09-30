@@ -1,0 +1,36 @@
+index,spectrum,"pulp specimen","preTAILS / TAILS",probability,"start scan",expect,ions,peptide,protein,"leading protein","calc neutral
+pep mass","precursor
+neutral mass","mz ratio","assumed
+charge",massdiff,ppm,fval,pI,"retention
+time sec","num
+tol term"," missed
+cleavages",ionscore,"identity
+score","homology
+score",hyperscore,nextscore,bscore,yscore,raw,denovo,SpecEValue,IsotopeError,xcorr,deltacn,deltacnstar,spscore,sprank,pI_zscore,RT,RT_score
+,,,,,,,,R.PPSPALASVLLALLLSGAAR.A,,P24158,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,K.PTHVNVSVVMAEVDGTCY.,,P01876,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,MFGGPGTASRPSSSR,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,TYSLGSALRPSTSR,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,SSAVR,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,LLQDSVDFSLADAINTEFK,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,RFLEQQNK,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,RQVDQLTNDK,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,QDVDNASLAR,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,QQYESVAAK,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,QVQSLTCEVDALK,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,MALDIEIATYR,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,ETNLDSLPLVDTHSK,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,NALLSLAK,,P04083,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,ALYEAGER,,P04083,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,VLDLELK,,P04083,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,SEIDMNDIK,,P04083,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,MYGISLCQAILDETK,,P04083,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,T.n[35.07]SDTSGDFR.N,,P04083,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,.n[43.02]MSTRSVSSSSYR.R,,P08670,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,LLETIDQLYLEYAK,,P12814,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,LAILGIHNEVSK,,P12814,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,GISQEQMNEFR,,P12814,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,ELPPDQAEYCIAR,,P12814,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,W.n[35.07]DNLGALTQK.R,,P12814,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,LEDFLDNER,,Q16512,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,M.n[43.02]ASDAVQSEPR.S,,Q16512,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
