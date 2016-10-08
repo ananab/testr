@@ -4,11 +4,11 @@
 # Purpose: Match amino acid sequences identified by mass spectrometry to all 
 # amino acid sequences produced by humans.
 # Packages: seqinr, dplyr, tidyr, ggplot2
-lapply(c("dplyr", "seqinr", "tidyr", "ggplot2","assertthat"), library, character.only = T)
+lapply(c("dplyr", "seqinr", "tidyr", "ggplot2","assertthat","stringr"), library, character.only = T)
 #############################################################################
 
 # read csv file from test data
-ori_lkup <- read.csv("../data/testData.csv")
+ori_lkup <- read.csv("data/testData.csv")
 
 # select only relevant columns. the name "leading protein" is converted to "leading.protein" by R default
 lkup <- ori_lkup %>% 
@@ -27,34 +27,36 @@ pepseq <- as.character(lkup$peptide)
 # temp variable for formatting sequence
 tmp <- sub(".?\\.","",pepseq)
 tmp <- sub("n\\[.*\\]","",tmp)
-
+tmp <- sub("\\..*","",tmp)
 # add the formatted sequence as a new column named Lseq
 lkup <- lkup %>% 
-  mutate(Lseq=sub("\\..*","",tmp)) %>% 
+  mutate(Lseq=tmp) %>% 
   rename(Acc_id = leading.protein)
 
-write.csv(lkup, "../results/lkup.csv")
-saveRDS(lkup, "../results/lkup.rds")
+write.csv(lkup, "results/lkup.csv")
+saveRDS(lkup, "results/lkup.rds")
 
 ################################################################################
 ##### Load and clean the ref dataset.
-orig_ref <- read.fasta("../../data/uniprot-all.fasta", seqtype = "AA", as.string = T)
-ref <- data.frame(Acc_id = getName(orig_ref), Rseq = rapply(getSequence(orig_ref, as.string = T), c)) %>%
+orig_ref <- read.fasta("data/uniprot-all.fasta", seqtype = "AA", as.string = T)
+ref <- data.frame(Acc_id = getName(orig_ref), 
+                  Rseq = rapply(getSequence(orig_ref, as.string = T), c)) %>%
   ### Clean Acc_id.
   mutate(Acc_id = substr(as.character(Acc_id), 4, 9)) %>%
   ### Clean Rseq.
   mutate(Rseq = toupper(Rseq)) %>%
   ### Remove duplicates.
   distinct(Acc_id, Rseq)
+
 ### Save the clean version.
-write.csv(ref,"../results/ref.csv")
-saveRDS(ref, "../results/ref.rds")
+write.csv(ref,"results/ref.csv")
+saveRDS(ref, "results/ref.rds")
 
 
 
 ##### Merge the lkup and ref datasets by Acc_id. Do checks.
-lkup <- read.csv("../results/lkup.csv")
-ref <- read.csv("../results/ref.csv")
+lkup <- read.csv("results/lkup.csv")
+ref <- read.csv("results/ref.csv")
 combo <- merge(lkup, ref, by = "Acc_id") %>% 
 ### Keep obs with unique values in Lseq and Rseq only.
   group_by(Rseq) %>%
@@ -96,9 +98,10 @@ which(combo$Match == FALSE)
 assert_that(length(unique(combo$Acc_id)) == length(unique(combo$Rseq)))
 
 ### Keep matching statistics only.
-stat <- select(combo, -Lseq, -Rseq, -Match) %>% 
-  View()
+stat <- select(combo, -Lseq, -Rseq, -Match)
 ### Save the edited version.
-saveRDS(combo, "../results/combo.rds")
-saveRDS(stat, "../results/stat.rds")
+saveRDS(combo, "results/combo.rds")
+saveRDS(stat, "results/stat.rds")
+
+
 
