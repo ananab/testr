@@ -19,7 +19,7 @@ lkup <- ori_lkup %>%
 # create new column indicating whether the N-terminus is blocked before tryptic digestion
   mutate(Ncapped = 0)
 
-lkup$Ncapped[contains("n",FALSE,lkup$peptide)] <- 1
+lkup$Ncapped[grepl("n",ignore.case = FALSE,lkup$peptide)] <- 1
 
 # variable that stores the peptide sequence in character
 pepseq <- as.character(lkup$peptide)
